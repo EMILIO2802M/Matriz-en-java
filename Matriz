@@ -1,0 +1,43 @@
+package matriz;
+import javax.swing.JOptionPane;
+public class Matriz {
+    public static void main(String[] args) {
+
+        int p=0,filas = 5;
+        int ñ=0;
+        int v=0;
+        int s = 0;
+        int columnas = 5;
+        int[][] calif = new int[filas][columnas];
+
+        String encabezado[] = {"      ", "|  U1|", "|  U2|", "|  U3|", "|  U4|", "|  U5|", "PROMEDIO"};
+        for (int i = 0; i < 7; i++) {
+            System.out.print(encabezado[i] + "\t ");
+        }
+        
+        System.out.println("");
+        for (int j = 0; j < 6; j++) {
+            String lateral[] = {"|Calc Dif|", "|Mat Disc|", "|Fun Prog|",
+                "|Fund Inv|", "|Quimica |", "|Des Sust|"};
+            System.out.print(lateral[j]);
+            // Imprimir la matriz
+            System.out.print("");
+            for (byte a = 0; a < 1; a++) {
+                for (byte b = 0; b < 5; b++) {
+                    calif[a][b] = Byte.parseByte(JOptionPane.showInputDialog("Ingresa tu calificación"));
+                    System.out.print("  " + calif[a][b] + "\t ");
+                    ñ+=calif[a][b];
+                    p=(ñ/5);
+                    }
+                       System.out.print("   " +p);
+                       ñ=0;  
+                }
+                      System.out.println("");
+                      v+=p;
+                      s=(v/6);     
+            }
+                     System.out.println("");
+                     System.out.println("El promedio final es:  " +s);
+                     v=0;
+    }
+}
